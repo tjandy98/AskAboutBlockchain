@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+  <header>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/chat.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+
+
+
+
+  </header>
+  <body>
+
+
+<div class="jumbotron-fluid">
+
+     <h1 class="display-4 text-center">AskAboutBlockchain</h1>
+     <p class="lead text-center">.com</p>
+
+  <div class="chatbox">
+		<div class="chatlogs" id="messages">
+			<div class="chat friend">
+				<div class="user-photo-bot"></div>
+				<p class="chat-message">Ask anything about blockchain</p>
+			</div>
+
+		</div>
+
+
+     <form id="message-form" class="chat-form">
+
+          <input class="chat-input" name="message" type="text" placeholder="Ask a question" autofocus autocomplete="on"> </input>
+          <button>Send</button>
+        </form>
+	</div>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left:48%;">
+    About
+  </button>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:black">About</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="color:black;">
+          I created this website to help people understand more about Blockchain. <br> Donations would be very much appreciated. It will help pay the service & hosting fees. <br> Thank you!
+       
+        
+        <div class="alert alert-primary" role="alert">
+          Ethereum Address: 
+          <input type="text" class="form-control" value="0xA790Ceab023568D09c98CAF77fD6f96F8Ce910a4" readonly id="eth">
+          <button type="button" class="btn btn-info" onclick="copyEth()" style="margin-top:15px">Copy</button>
+
+          {{!-- <input  id="eth" class="form-control" type="text" value="0xA790Ceab023568D09c98CAF77fD6f96F8Ce910a4" readonly> --}}
+        </div>
+
+      
+
+         <div class="alert alert-warning" role="alert">
+         Ark Address:
+        <input type="text" class="form-control" value="AL33h6A9BZZTXxD9ijdiHWjuRRPm1q9b69" readonly id="ark">
+
+        <button type="button" class="btn btn-info" onclick="copyArk()" style="margin-top:15px">Copy</button>
+
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script id="message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <p>{{text}}</p>
+        </div>
+      </li>
+    </script>
+
+<script>
+  function copyEth() {
+  
+  var ethAdd = document.getElementById("eth");
+  ethAdd.select();
+  document.execCommand("copy");
+  alert("Copied Ethereum Address : " + ethAdd.value);
+}
+
+ function copyArk() {
+  
+  var arkAdd = document.getElementById("ark");
+  arkAdd.select();
+  document.execCommand("copy");
+  alert("Copied Ark Address : " + arkAdd.value);
+}
+</script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-3.1.0.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+    {{>footer}}
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+
+  </body>
+
+</html>
