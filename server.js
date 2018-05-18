@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
             let obj = JSON.parse(result)
             let replyMessage = "";
             if (obj.answers[0].answer == 'No good match found in KB.'){
-              replyMessage = "I'm sorry, I am not trained to answer that yet.";
+              replyMessage = "I'm   sorry, I am not trained to answer that yet.";
               socket.emit('newMessage', generateMessage('Bot', replyMessage));
               
             }
@@ -57,12 +57,27 @@ app.get('/', (req, res) => {
               socket.emit('newMessage', generateMessage('Bot', obj.answers[0].answer));
             }
             
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            
+            if(dd<10) {
+                dd = '0'+dd
+            } 
+            
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+
+            today = mm + '/' + dd + '/' + yyyy;
            
       var newPostRef = ref.push();
       newPostRef.set({
         question: message.text,
-        answer: obj.answers[0].answer
-        
+        answer: obj.answers[0].answer,
+        date: today
       });
         });
 
