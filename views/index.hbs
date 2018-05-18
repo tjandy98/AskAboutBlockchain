@@ -36,7 +36,7 @@
 
      <form id="message-form" class="chat-form">
 
-          <input class="chat-input" name="message" type="text" placeholder="   Ask a question" autofocus autocomplete="on"> </input>
+          <input class="chat-input" name="message" type="text"  pattern=".{3,}" required title="5 characters minimum" placeholder="  Ask a question" autofocus autocomplete="on"> </input>
           {{!-- <button>Send</button> --}}
           <button class="btn btn-primary">Send</button>
 
