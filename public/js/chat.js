@@ -20,7 +20,7 @@ function scrollToBottom () {
 
 socket.on('newMessage', function (message) {
   
- console.log('newMessage works');
+ 
   var formattedTime = moment(message.createdAt).format('h:mm a');
  
 

@@ -1,3 +1,7 @@
+.text{
+	color:black;
+}
+
 .chatbox {
 	width: 500px;
 	min-width: 390px;
@@ -62,7 +66,7 @@
 	margin: 5px 10px 0;
 	border-radius: 10px;
 	color: #fff;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .friend .chat-message {

@@ -74,16 +74,6 @@ app.get('/', (req, res) => {
    
   });
 
-// Initialize Firebase
-// TODO: Replace with your project's customized code snippet
-// var config = {
-//   apiKey: "AIzaSyA89ULimpSQzMmPBALey4a1rYWaPwJx2RY",
-//   authDomain: "askaboutblockchain.firebaseapp.com",
-//   databaseURL: "https://askaboutblockchain.firebaseio.com",
-//   storageBucket: "askaboutblockchain.appspot.com",
-// };
-
-
 
 
 server.listen(port, () => {
