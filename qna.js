@@ -8,17 +8,21 @@ let https = require ('https');
 // **********************************************
 
 // NOTE: Replace this with a valid host name.
-let host = "askaboutblockchain.azurewebsites.net";
+// let host = "askaboutblockchain.azurewebsites.net";
+let host = "ehubbot.azurewebsites.net";
 
 // NOTE: Replace this with a valid endpoint key.
 // This is not your subscription key.
 // To get your endpoint keys, call the GET /endpointkeys method.
-let endpoint_key = "ba5eac5c-0ec8-479a-80bd-8c527ae060d7";
+// let endpoint_key = "ba5eac5c-0ec8-479a-80bd-8c527ae060d7";
+let endpoint_key = "189f6541-fbcc-449a-a035-9f3729a27f19";
+// 
 
 // NOTE: Replace this with a valid knowledge base ID.
 // Make sure you have published the knowledge base with the
 // POST /knowledgebases/{knowledge base ID} method.
-let kb = "275be859-8d17-4817-876f-2e4cbaa369d3";
+// let kb = "275be859-8d17-4817-876f-2e4cbaa369d3";
+let kb = "41556151-d5f0-4d19-a1d1-ac399f8b671a";
 
 let method = "/qnamaker/knowledgebases/" + kb + "/generateAnswer";
 
